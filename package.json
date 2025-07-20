@@ -1,0 +1,47 @@
+{
+  "name": "zbuf",
+  "version": "1.0.0",
+  "description": "A CLI tool for local message posting and management",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "zbuf": "./dist/index.js"
+  },
+  "scripts": {
+    "dev": "tsx src/index.tsx",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "pnpm build"
+  },
+  "keywords": ["cli", "message", "memo", "terminal", "ink", "react"],
+  "author": "zztkm",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zztkm/zbuf.git"
+  },
+  "homepage": "https://github.com/zztkm/zbuf#readme",
+  "bugs": {
+    "url": "https://github.com/zztkm/zbuf/issues"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "packageManager": "pnpm@10.12.2",
+  "dependencies": {
+    "ink": "^4.4.1",
+    "ink-text-input": "^5.0.1",
+    "react": "^18.3.1",
+    "uuid": "^11.1.0",
+    "xdg-basedir": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.15",
+    "@types/react": "^18.3.23",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  }
+}
