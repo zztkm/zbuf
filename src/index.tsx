@@ -9,6 +9,7 @@ import { ExportFormat } from './types/index.js';
 import fs from 'fs';
 import path from 'path';
 import os from 'os';
+import packageJson from '../package.json' with { type: 'json' };
 
 const args = process.argv.slice(2);
 
@@ -73,6 +74,7 @@ if (args[0] === '--export' || args[0] === '-e') {
   console.log('  zbuf [directory] --export   Export session for specified directory');
   console.log('  zbuf --export [format]      Export current session (format: markdown, json, plain)');
   console.log('  zbuf --help                 Show this help message');
+  console.log('  zbuf --version              Show version information');
   console.log('');
   console.log('Examples:');
   console.log('  zbuf ~/projects/myapp       Open session for ~/projects/myapp');
@@ -81,6 +83,9 @@ if (args[0] === '--export' || args[0] === '-e') {
   console.log('Interactive mode commands:');
   console.log('  :clear         Clear current session');
   console.log('  :quit          Exit application');
+  process.exit(0);
+} else if (args[0] === '--version' || args[0] === '-v') {
+  console.log(`zbuf v${packageJson.version}`);
   process.exit(0);
 } else {
   // Start interactive mode
